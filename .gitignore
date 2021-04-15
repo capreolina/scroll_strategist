@@ -1,0 +1,5 @@
+/target
+Cargo.lock
+
+# Text editing stuff
+.vscode/
