@@ -1,4 +1,5 @@
 use crate::{scroll::Scroll, stats::Stats};
+use std::rc::Rc;
 
 /// The state of an item, including how many slots it has left, and what its
 /// stats are. This is a node of a scrolling strategy tree, so it also can have
@@ -12,7 +13,7 @@ pub enum ItemState<'a> {
     Exists {
         slots: u8,
         stats: Stats,
-        child: Option<ScrollUse<'a>>,
+        child: Option<Rc<ScrollUse<'a>>>,
     },
     Boomed,
 }

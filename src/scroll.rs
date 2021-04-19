@@ -39,9 +39,24 @@ impl Scroll {
     /// (`scrolls`), if you think of each `Stats` struct as an element of a
     /// [max tropical](https://en.wikipedia.org/wiki/Tropical_semiring)
     /// [semimodule](https://en.wikipedia.org/wiki/Semimodule).
+    ///
+    /// ## Invariants:
+    ///
+    /// - `!scrolls.is_empty()`
+    /// - Every stat array of every scroll in `scrolls` is of equal length.
     pub fn master_scroll(scrolls: &[Self]) -> Self {
-        let mut master =
-            Self::new(1.0, false, f64::INFINITY, Default::default());
+        debug_assert!(!scrolls.is_empty());
+        debug_assert!(scrolls
+            .iter()
+            .map(|s| s.stats.len())
+            .all(|l| l == scrolls[0].stats.len()));
+
+        let mut master = Self::new(
+            1.0,
+            false,
+            f64::INFINITY,
+            Stats::from_vec(vec![0; scrolls[0].stats.len()]),
+        );
 
         for scroll in scrolls {
             master.stats.max_in_place(&scroll.stats);
