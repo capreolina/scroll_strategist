@@ -1,4 +1,8 @@
-use std::{cmp::Ordering, ops::Mul};
+use std::{
+    cmp::Ordering,
+    hash::{Hash, Hasher},
+    ops::Mul,
+};
 
 /// An ordered array of stats that an item can have (q.v. `ItemState`), or that
 /// a scroll can grant on success (q.v. `Scroll`).
@@ -14,7 +18,7 @@ use std::{cmp::Ordering, ops::Mul};
 /// two `Stats` structs have stat arrays of equal length. This invariant is
 /// only checked using debug assertions; in release mode, breaking this
 /// invariant might still panic, or might even silently fail!
-#[derive(Clone, Debug, Hash)]
+#[derive(Clone, Debug)]
 pub struct Stats {
     stats: Vec<u16>,
 }
@@ -82,6 +86,12 @@ impl PartialEq for Stats {
 }
 
 impl Eq for Stats {}
+
+impl Hash for Stats {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.stats.hash(state);
+    }
+}
 
 impl PartialOrd for Stats {
     /// Returns `None` any time that `self.stats.len() != other.stats.len()`.

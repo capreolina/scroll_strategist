@@ -65,6 +65,9 @@ fn dfs_p<'a, 'b>(
             stats,
             child,
         } => {
+            // Check the cache for whether or not we have already optimised
+            // from this starting point before. If so, we can return without
+            // doing any real work.
             if let Some(su) = cache.get(&CacheKey::new_borrowed(*slots, stats))
             {
                 child.replace(Rc::clone(su));
@@ -91,9 +94,9 @@ fn dfs_p<'a, 'b>(
 
                     // Is it even possible to reach the goal at this point?
                     // This is the "master scroll" heuristic.
-                    if &(outcome_suc_stats.plus(
+                    if !(&(outcome_suc_stats.plus(
                         &(master_scroll.stats.clone() * u16::from(slots_m1)),
-                    )) < goal
+                    )) >= goal)
                     {
                         continue;
                     }
@@ -118,14 +121,11 @@ fn dfs_p<'a, 'b>(
 
                 // Is it even possible to reach the goal at this point? This is
                 // the "master scroll" heuristic.
-                if &(stats.plus(
+                let goal_possible_cond_fail = &(stats.plus(
                     &(master_scroll.stats.clone() * u16::from(slots_m1)),
-                )) < goal
-                {
-                    continue;
-                }
+                )) >= goal;
 
-                if scroll.p_suc < 1.0 {
+                if goal_possible_cond_fail && scroll.p_suc < 1.0 {
                     let outcome_fail = scroll_use.push_outcome(
                         ItemState::new_exists(slots_m1, stats.clone()),
                     );
