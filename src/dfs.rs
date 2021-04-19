@@ -137,7 +137,7 @@ fn dfs_p<'a>(
                 if let Some(child_scroll_use) = child {
                     // We use the expected cost to break ties here.
                     if scroll_use.p_goal > child_scroll_use.p_goal
-                        || (scroll_use.p_goal == child_scroll_use.p_goal
+                        || (scroll_use.p_goal >= child_scroll_use.p_goal
                             && scroll_use.exp_cost < child_scroll_use.exp_cost)
                     {
                         child.replace(scroll_use);

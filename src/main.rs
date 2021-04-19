@@ -1,3 +1,7 @@
+#![forbid(unsafe_code)]
+#![deny(clippy::all)]
+#![deny(deprecated)]
+
 mod dfs;
 mod graph;
 mod scroll;
