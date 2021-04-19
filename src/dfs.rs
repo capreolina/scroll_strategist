@@ -122,8 +122,8 @@ fn dfs_p<'a, 'b>(
                     scroll_use.exp_cost += scroll.p_suc * exp_cost_cond_suc;
                 }
 
-                // Is it even possible to reach the goal at this point? This is
-                // the "master scroll" heuristic.
+                // Is it even possible to reach the goal, assuming that this
+                // scroll fails? This is the "master scroll" heuristic.
                 let goal_possible_cond_fail = &(stats.plus(
                     &(master_scroll.stats.clone() * u16::from(slots_m1)),
                 )) >= goal;

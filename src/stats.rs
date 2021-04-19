@@ -34,14 +34,19 @@ impl Stats {
         self.stats.len()
     }
 
+    /// Returns `self.len() == 0`.
+    pub fn is_empty(&self) -> bool {
+        self.len() == 0
+    }
+
     /// Adds `self` to `other`, using ordinary addition, and returns the result
     /// as a freshly-allocated `Stats`.
     ///
     /// ## Invariants:
     ///
-    /// - `self.stats.len() == other.stats.len()`
+    /// - `self.len() == other.len()`
     pub fn plus(&self, other: &Self) -> Self {
-        debug_assert_eq!(self.stats.len(), other.stats.len());
+        debug_assert_eq!(self.len(), other.len());
 
         Self {
             stats: self
@@ -62,9 +67,9 @@ impl Stats {
     ///
     /// ## Invariants:
     ///
-    /// - `self.stats.len() == other.stats.len()`
+    /// - `self.len() == other.len()`
     pub fn max_in_place(&mut self, other: &Stats) {
-        debug_assert_eq!(self.stats.len(), other.stats.len());
+        debug_assert_eq!(self.len(), other.len());
 
         for (i, stat) in other.stats.iter().enumerate() {
             if stat > &self.stats[i] {
@@ -77,9 +82,9 @@ impl Stats {
 impl PartialEq for Stats {
     /// ## Invariants:
     ///
-    /// - `self.stats.len() == other.stats.len()`
+    /// - `self.len() == other.len()`
     fn eq(&self, other: &Self) -> bool {
-        debug_assert_eq!(self.stats.len(), other.stats.len());
+        debug_assert_eq!(self.len(), other.len());
 
         self.stats == other.stats
     }
@@ -94,12 +99,12 @@ impl Hash for Stats {
 }
 
 impl PartialOrd for Stats {
-    /// Returns `None` any time that `self.stats.len() != other.stats.len()`.
-    /// Returns `None` any time that a particular stat is _larger_ in `self`
-    /// (compared to the same stat in `other`), but another particular stat is
-    /// _smaller_ in `self`.
+    /// Returns `None` any time that `self.len() != other.len()`. Returns
+    /// `None` any time that a particular stat is _larger_ in `self` (compared
+    /// to the same stat in `other`), but another particular stat is _smaller_
+    /// in `self`.
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        if self.stats.len() != other.stats.len() {
+        if self.len() != other.len() {
             return None;
         }
 

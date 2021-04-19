@@ -2,14 +2,17 @@
 #![deny(clippy::all)]
 #![deny(deprecated)]
 
-mod dfs;
-mod graph;
-mod scroll;
-mod stats;
+pub mod dfs;
+pub mod graph;
+pub mod scroll;
+pub mod stats;
 
-use crate::{dfs::solve_p, graph::ItemState, scroll::Scroll, stats::Stats};
+#[test]
+fn toy_of_101_test() {
+    use crate::{
+        dfs::solve_p, graph::ItemState, scroll::Scroll, stats::Stats,
+    };
 
-fn main() {
     let mut init_state =
         ItemState::new_exists(7, Stats::from_vec(vec![94, 0, 0]));
     let scrolls = [
@@ -30,11 +33,16 @@ fn main() {
     {
         let child = child.unwrap();
 
-        println!(
-            "scroll: {:?}\n\np_goal: {:?}\nexp_cost: {:?}",
+        assert_eq!(
             child.scroll(),
-            child.p_goal,
-            child.exp_cost,
+            &Scroll::new(
+                0.3,
+                true,
+                1_500_000.0,
+                Stats::from_vec(vec![5, 3, 1])
+            )
         );
+        assert_eq!(child.p_goal, 0.143_316_675);
+        assert_eq!(child.exp_cost, 3_329_705.276_25);
     }
 }

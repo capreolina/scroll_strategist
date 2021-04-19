@@ -1,13 +1,13 @@
 [package]
 name = "scroll_strategist"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["deer <capreolina@protonmail.ch>"]
 edition = "2018"
 description = "An algorithm for choosing scrolling strategies"
 repository = "https://codeberg.org/deer/scroll_strategist"
 readme = "README.md"
-keywords = ["maplestory", "scroll", "scrolling", "categorical distribution"]
-categories = ["games"]
+keywords = ["maplestory", "scroll", "strategy", "dynamic-programming", "graph"]
+categories = ["games", "algorithms"]
 license = "AGPL-3.0-or-later"
 
 [dependencies]

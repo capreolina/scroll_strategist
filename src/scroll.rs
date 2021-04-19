@@ -2,7 +2,7 @@ use crate::stats::Stats;
 
 /// A scroll. Contains all of the usual information associated with a scroll,
 /// in addition to its nominal cost.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Scroll {
     /// Probability of success.
     pub p_suc: f64,
