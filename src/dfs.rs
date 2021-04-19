@@ -5,6 +5,7 @@ use crate::{
 };
 use rustc_hash::FxHashMap;
 use std::{
+    cmp::Ordering,
     hash::{Hash, Hasher},
     rc::Rc,
 };
@@ -94,11 +95,13 @@ fn dfs_p<'a, 'b>(
 
                     // Is it even possible to reach the goal at this point?
                     // This is the "master scroll" heuristic.
-                    if !(&(outcome_suc_stats.plus(
+                    match (outcome_suc_stats.plus(
                         &(master_scroll.stats.clone() * u16::from(slots_m1)),
-                    )) >= goal)
+                    ))
+                    .partial_cmp(goal)
                     {
-                        continue;
+                        Some(Ordering::Less) | None => continue,
+                        _ => (),
                     }
 
                     let outcome_suc = scroll_use.push_outcome(
