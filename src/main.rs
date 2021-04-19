@@ -235,46 +235,37 @@ impl Eq for Stats {}
 
 impl PartialOrd for Stats {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        let (longer, shorter) = if self.stats.len() >= other.stats.len() {
-            (&self.stats, &other.stats)
-        } else {
-            (&other.stats, &self.stats)
-        };
+        let mut part_ord = None;
 
-        let mut partial_ordering = None;
-
-        for (i, stat) in longer.iter().enumerate() {
-            let stat_cmp = stat.cmp(shorter.get(i).unwrap_or(&0));
-
-            match partial_ordering {
-                None => partial_ordering = Some(stat_cmp),
+        for ord in self
+            .stats
+            .iter()
+            .chain(iter::repeat(&0))
+            .zip(other.stats.iter().chain(iter::repeat(&0)))
+            .map(|(s0, s1)| s0.cmp(s1))
+            .take(self.stats.len().max(other.stats.len()))
+        {
+            match part_ord {
+                None => part_ord = Some(ord),
                 Some(Ordering::Less) => {
-                    if stat_cmp == Ordering::Greater {
+                    if ord == Ordering::Greater {
                         return None;
                     }
                 }
                 Some(Ordering::Equal) => {
-                    if stat_cmp != Ordering::Equal {
-                        partial_ordering = Some(stat_cmp);
+                    if ord != Ordering::Equal {
+                        part_ord = Some(ord);
                     }
                 }
                 Some(Ordering::Greater) => {
-                    if stat_cmp == Ordering::Less {
+                    if ord == Ordering::Less {
                         return None;
                     }
                 }
             }
         }
 
-        if self.stats.len() >= other.stats.len() {
-            partial_ordering
-        } else {
-            partial_ordering.map(|o| match o {
-                Ordering::Less => Ordering::Greater,
-                Ordering::Greater => Ordering::Less,
-                _ => o,
-            })
-        }
+        part_ord
     }
 }
 
@@ -373,6 +364,7 @@ fn dfs_p<'a>(
             stats,
             child,
         } => {
+            // Just in case `child.is_some()`.
             let _ = child.take();
 
             if slots == &0 {
@@ -385,9 +377,12 @@ fn dfs_p<'a>(
                 let mut scroll_use = ScrollUse::new(scroll);
 
                 if scroll.p_suc > 0.0 {
+                    // New stats of the item, assuming a success of this
+                    // scroll.
                     let outcome_suc_stats = stats.plus(&scroll.stats);
 
                     // Is it even possible to reach the goal at this point?
+                    // This is the "master scroll" heuristic.
                     if &(outcome_suc_stats.plus(
                         &(master_scroll.stats.clone() * u16::from(slots_m1)),
                     )) < goal
@@ -399,13 +394,17 @@ fn dfs_p<'a>(
                         ItemState::new_exists(slots_m1, outcome_suc_stats),
                     );
 
+                    // (probability of reaching the goal conditioned on this
+                    // scroll succeeding, expected cost after this point
+                    // conditioned on this scroll succeeding)
                     let (p_goal_cond_suc, exp_cost_cond_suc) =
                         dfs_p(outcome_suc, scrolls, master_scroll, goal);
                     scroll_use.p_goal += scroll.p_suc * p_goal_cond_suc;
                     scroll_use.exp_cost += scroll.p_suc * exp_cost_cond_suc;
                 }
 
-                // Is it even possible to reach the goal at this point?
+                // Is it even possible to reach the goal at this point? This is
+                // the "master scroll" heuristic.
                 if &(stats.plus(
                     &(master_scroll.stats.clone() * u16::from(slots_m1)),
                 )) < goal
@@ -418,6 +417,9 @@ fn dfs_p<'a>(
                         ItemState::new_exists(slots_m1, stats.clone()),
                     );
 
+                    // (probability of reaching the goal conditioned on this
+                    // scroll failing, expected cost after this point
+                    // conditioned on this scroll failing)
                     let (p_goal_cond_fail, exp_cost_cond_fail) =
                         dfs_p(outcome_fail, scrolls, master_scroll, goal);
                     let p_fail = if scroll.dark {
@@ -440,6 +442,9 @@ fn dfs_p<'a>(
                     }
                 }
 
+                // Now, we check whether or not using this scroll is a better
+                // choice than using any of the scrolls that we tested
+                // previously.
                 if let Some(child_scroll_use) = child {
                     // We use the expected cost to break ties here.
                     if scroll_use.p_goal > child_scroll_use.p_goal
@@ -456,6 +461,8 @@ fn dfs_p<'a>(
             if let Some(child_scroll_use) = child.as_ref() {
                 (child_scroll_use.p_goal, child_scroll_use.exp_cost)
             } else {
+                // This branch is possibly taken when our "master scroll"
+                // heuristic rejects all scrolls.
                 (0.0, 0.0)
             }
         }

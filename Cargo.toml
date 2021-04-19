@@ -1,6 +1,6 @@
 [package]
 name = "scroll_strategist"
-version = "0.0.0"
+version = "0.0.1"
 authors = ["deer <capreolina@protonmail.ch>"]
 edition = "2018"
 description = "An algorithm for choosing scrolling strategies"
