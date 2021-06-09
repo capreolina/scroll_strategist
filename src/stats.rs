@@ -1,5 +1,6 @@
 use std::{
     cmp::Ordering,
+    fmt,
     hash::{Hash, Hasher},
     ops::Mul,
 };
@@ -151,5 +152,21 @@ impl Mul<u16> for Stats {
         }
 
         self
+    }
+}
+
+impl fmt::Display for Stats {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let mut first = true;
+        for stat in self.stats.iter() {
+            if first {
+                write!(f, "{}", stat)?;
+                first = false;
+            } else {
+                write!(f, ", {}", stat)?;
+            }
+        }
+
+        Ok(())
     }
 }

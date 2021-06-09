@@ -87,6 +87,12 @@ impl<'a> ScrollUse<'a> {
         self.scroll
     }
 
+    /// Returns a reference to the internal representation of the set of
+    /// all possible outcomes.
+    pub fn outcomes(&self) -> &[ItemState<'a>] {
+        self.outcomes.outcomes()
+    }
+
     /// Adds a new outcome to this `ScrollUse`'s set of outcomes, and returns a
     /// mutable reference to the newly added outcome.
     pub fn push_outcome(
@@ -111,6 +117,12 @@ impl<'a> Outcomes<'a> {
         Self {
             outcomes: Vec::new(),
         }
+    }
+
+    /// Returns a reference to the internal representation of the set of
+    /// outcomes.
+    pub fn outcomes(&self) -> &[ItemState<'a>] {
+        &self.outcomes
     }
 
     /// Adds a new outcome to this set of outcomes, and returns a mutable
