@@ -210,8 +210,8 @@ any](https://en.wikipedia.org/wiki/Universal_quantification) 𝑎, 𝑏, 𝑐 �
   [abelian](https://en.wikipedia.org/wiki/Commutative_property)
   [monoid](https://en.wikipedia.org/wiki/Monoid) with an
   [identity](https://en.wikipedia.org/wiki/Identity_element) called 0:
-    - 𝗆𝖺𝗑 is [closed][closure] over ℐ. The larger of two elements of ℐ has
-      to be… an element of ℐ.
+    - ℐ is [closed][closure] under 𝗆𝖺𝗑. The larger of two elements of ℐ has to
+      be… an element of ℐ.
     - 𝗆𝖺𝗑 is
       [associative](https://en.wikipedia.org/wiki/Associative_property):
       𝗆𝖺𝗑{𝗆𝖺𝗑{𝑎, 𝑏}, 𝑐} = 𝗆𝖺𝗑{𝑎, 𝗆𝖺𝗑{𝑏, 𝑐}} = 𝗆𝖺𝗑{𝑎, 𝑏, 𝑐}.
@@ -220,7 +220,7 @@ any](https://en.wikipedia.org/wiki/Universal_quantification) 𝑎, 𝑏, 𝑐 �
       of 𝗆𝖺𝗑.
     - 𝗆𝖺𝗑 is commutative: 𝗆𝖺𝗑{𝑎, 𝑏} = 𝗆𝖺𝗑{𝑏, 𝑎}.
 - (ℐ, ∗) is a monoid with an identity called 1:
-    - ∗ is [closed][closure] over ℐ. Multiplying two numbers in the unit
+    - ℐ is [closed][closure] under ∗. Multiplying two numbers in the unit
       interval can never yield a number greater than 1, as multiplying by a
       number in the unit interval can’t make a number larger — at best, you can
       just not change its value (by multiplying by 1). Similarly, multiplying
