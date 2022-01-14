@@ -1,0 +1,22 @@
+flowchart TB
+    STATE0[["<b>slots:</b> 7<br /><b>stats:</b> [92 WATK, 3 STR]"]] ==> SCROLL_USE0{{"<b>scroll:</b> 30% for WATK<br /><b>P(goal):</b> 14.332%<br /><b>E[cost]:</b> 2.9M mesos"}}
+    START[ ] ==> STATE0
+
+    SCROLL_USE0 -- success --> STATE1[["<b>slots:</b> 6<br /><b>stats:</b> [97 WATK, 6 STR]"]]
+    SCROLL_USE0 -- miss --> STATE2[["<b>slots:</b> 6<br /><b>stats:</b> [92 WATK, 3 STR]"]]
+    SCROLL_USE0 -- boom --> STATE3[\"<i>boomed</i>"/]
+
+    STATE1 ==> SCROLL_USE1{{"<b>scroll:</b> 60% for WATK<br /><b>P(goal):</b> 36.346%<br /><b>E[cost]:</b> 2.0M mesos"}}
+    STATE2 ==> SCROLL_USE2{{"<b>scroll:</b> 30% for WATK<br /><b>P(goal):</b> 9.794%<br /><b>E[cost]:</b> 2.9M mesos"}}
+
+    SCROLL_USE1 -. "[<i>…large subtree goes here…</i>]" .-> STATE4[["<b>slots:</b> 1<br /><b>stats:</b> [106 WATK, 11 STR]"]]
+    STATE4 ==> SCROLL_USE3{{"<b>scroll:</b> 70% for WATK<br /><b>P(goal):</b> 70%<br /><b>E[cost]:</b> 35k mesos"}}
+
+    SCROLL_USE2 -. "<i>…</i>" .-> STATE9["⋮"]
+
+    SCROLL_USE3 -- success --> STATE5(["<b>slots:</b> 0<br /><b>stats:</b> [108 WATK, 12 STR]"])
+    SCROLL_USE3 -- miss --> STATE6[\"<b>slots:</b> 0<br /><b>stats:</b> [106 WATK, 11 STR]"/]
+    SCROLL_USE3 -- boom --> STATE7[\"<i>boomed</i>"/]
+
+    style START fill:#00000000, stroke:#00000000;
+    style STATE9 fill:#00000000, stroke:#00000000;

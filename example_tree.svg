@@ -1,0 +1,381 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="846" style="max-width:796.176px;background-color:transparent;font-family:&quot;trebuchet ms&quot;,verdana,arial,sans-serif;font-size:16px;fill:#000" viewBox="0 0 796.176 846">
+  <marker id="a" class="marker flowchart" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto">
+    <path d="m0 0 10 5-10 5z" class="arrowMarkerPath" style="stroke-width:1;stroke-dasharray:1,0"/>
+  </marker>
+  <g class="root">
+    <g class="edgePaths" marker-end="url(#a)">
+      <path d="m640.57 124.5-.083 4.083c-.083 4.084-.25 12.25-.25 20.584 0 8.333.167 16.833.25 21.083l.083 4.25" class="edge-thickness-thick edge-pattern-solid flowchart-link LS-STATE0 LE-SCROLL_USE0" style="stroke-width:3.5px;fill:none"/>
+      <path d="M640.07 23v4.167c0 4.166 0 12.5.084 20.916.083 8.417.25 16.917.333 21.167l.083 4.25" class="edge-thickness-thick edge-pattern-solid flowchart-link LS-START LE-STATE0" style="stroke-width:3.5px;fill:none"/>
+      <path d="m546.557 226.957-44.186 8.34c-44.186 8.341-132.558 25.022-176.66 39.113-44.103 14.09-43.936 25.59-43.853 31.34l.083 5.75" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-SCROLL_USE0 LE-STATE1" style="fill:none"/>
+      <path d="m589.857 243.5-8.413 5.583c-8.413 5.584-25.239 16.75-33.569 28.084-8.33 11.333-8.163 22.833-8.08 28.583l.084 5.75" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-SCROLL_USE0 LE-STATE2" style="fill:none"/>
+      <path d="m691.284 243.5 8.246 5.583c8.246 5.584 24.739 16.75 33.069 29.584 8.33 12.833 8.496 27.333 8.58 34.583l.083 7.25" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-SCROLL_USE0 LE-STATE3" style="fill:none"/>
+      <path d="m281.941 362.5-.083 4.083c-.083 4.084-.25 12.25-.25 20.584 0 8.333.167 16.833.25 21.083l.083 4.25" class="edge-thickness-thick edge-pattern-solid flowchart-link LS-STATE1 LE-SCROLL_USE1" style="stroke-width:3.5px;fill:none"/>
+      <path d="m539.879 362.5-.083 4.083c-.084 4.084-.25 12.25-.25 20.584 0 8.333.166 16.833.25 21.083l.083 4.25" class="edge-thickness-thick edge-pattern-solid flowchart-link LS-STATE2 LE-SCROLL_USE2" style="stroke-width:3.5px;fill:none"/>
+      <path d="m281.941 481.5-.083 5.583c-.083 5.584-.25 16.75-.25 28.084 0 11.333.167 22.833.25 28.583l.083 5.75" class="edge-thickness-normal edge-pattern-dotted flowchart-link LS-SCROLL_USE1 LE-STATE4" style="fill:none;stroke-width:2px;stroke-dasharray:3"/>
+      <path d="m281.941 600.5-.083 4.083c-.083 4.084-.25 12.25-.25 20.584 0 8.333.167 16.833.25 21.083l.083 4.25" class="edge-thickness-thick edge-pattern-solid flowchart-link LS-STATE4 LE-SCROLL_USE3" style="stroke-width:3.5px;fill:none"/>
+      <path d="m539.879 481.5-.083 5.583c-.084 5.584-.25 16.75-.334 29.167-.083 12.417-.083 26.083-.083 32.917V556" class="edge-thickness-normal edge-pattern-dotted flowchart-link LS-SCROLL_USE2 LE-STATE9" style="fill:none;stroke-width:2px;stroke-dasharray:3"/>
+      <path d="m200.25 719.5-13.501 5.583c-13.502 5.584-40.504 16.75-54.006 28-13.5 11.25-13.5 22.584-13.5 28.25V787" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-SCROLL_USE3 LE-STATE5" style="fill:none"/>
+      <path d="m342.539 719.5 9.87 5.583c9.87 5.584 29.61 16.75 39.562 28.084 9.953 11.333 10.12 22.833 10.203 28.583l.084 5.75" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-SCROLL_USE3 LE-STATE6" style="fill:none"/>
+      <path d="m375.483 703.901 40.827 8.183c40.827 8.183 122.481 24.55 163.392 39.983 40.91 15.433 41.077 29.933 41.16 37.183l.083 7.25" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-SCROLL_USE3 LE-STATE7" style="fill:none"/>
+    </g>
+    <g class="edgeLabels">
+      <g class="edgeLabel">
+        <foreignObject width="0" height="0" class="label">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel"/>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="0" height="0" class="label">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel"/>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="57.797" height="18" class="label" transform="translate(252.543 268)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel">
+              success
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="32.891" height="18" class="label" transform="translate(522.934 268)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel">
+              miss
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="40.031" height="18" class="label" transform="translate(720.746 268)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel">
+              boom
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="0" height="0" class="label">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel"/>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="0" height="0" class="label">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel"/>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="209.906" height="18" class="label" transform="translate(176.488 506)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel">
+              [
+              <i>
+                …large subtree goes here…
+              </i>
+              ]
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="0" height="0" class="label">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel"/>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="16" height="18" class="label" transform="translate(531.379 506)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel">
+              <i>
+                …
+              </i>
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="57.797" height="18" class="label" transform="translate(90.344 744)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel">
+              success
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="32.891" height="18" class="label" transform="translate(385.313 744)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel">
+              miss
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="edgeLabel">
+        <foreignObject width="40.031" height="18" class="label" transform="translate(600.43 744)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="edgeLabel">
+              boom
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+    </g>
+    <g class="nodes">
+      <g class="node default">
+        <path class="label-container" d="M544.102 124H736.04V73H544.102v51h-8H744.04V73H536.102v51z"/>
+        <foreignObject width="176.938" height="36" class="label" transform="translate(551.602 80.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                slots:
+              </b>
+              7
+              <br/>
+              <b>
+                stats:
+              </b>
+              [92 WATK, 3 STR]
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M554.328 243h171.484l17.25-34.5-17.25-34.5H554.328l-17.25 34.5z"/>
+        <foreignObject width="156.484" height="54" class="label" transform="translate(561.828 181.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                scroll:
+              </b>
+              30% for WATK
+              <br/>
+              <b>
+                P(goal):
+              </b>
+              14.332%
+              <br/>
+              <b>
+                E[cost]:
+              </b>
+              2.9M mesos
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default" transform="translate(640.07 15.5)">
+        <rect class="basic label-container" style="fill:#00000000;stroke:#00000000" rx="0" ry="0" x="-7.5" y="-7.5" width="15" height="15"/>
+        <foreignObject width="0" height="0" class="label">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel"/>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M185.473 362h191.938v-51H185.473v51h-8 207.938v-51H177.473v51z"/>
+        <foreignObject width="176.938" height="36" class="label" transform="translate(192.973 318.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                slots:
+              </b>
+              6
+              <br/>
+              <b>
+                stats:
+              </b>
+              [97 WATK, 6 STR]
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M443.41 362h191.938v-51H443.41v51h-8 207.938v-51H435.41v51z"/>
+        <foreignObject width="176.938" height="36" class="label" transform="translate(450.91 318.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                slots:
+              </b>
+              6
+              <br/>
+              <b>
+                stats:
+              </b>
+              [92 WATK, 3 STR]
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M709.848 353h61.828l16.5-33h-94.828z"/>
+        <foreignObject width="57.828" height="18" class="label" transform="translate(711.848 327.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <i>
+                boomed
+              </i>
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M195.7 481h171.484l17.25-34.5-17.25-34.5H195.7l-17.25 34.5z"/>
+        <foreignObject width="156.484" height="54" class="label" transform="translate(203.2 419.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                scroll:
+              </b>
+              60% for WATK
+              <br/>
+              <b>
+                P(goal):
+              </b>
+              36.346%
+              <br/>
+              <b>
+                E[cost]:
+              </b>
+              2.0M mesos
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M453.637 481h171.484l17.25-34.5-17.25-34.5H453.637l-17.25 34.5z"/>
+        <foreignObject width="156.484" height="54" class="label" transform="translate(461.137 419.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                scroll:
+              </b>
+              30% for WATK
+              <br/>
+              <b>
+                P(goal):
+              </b>
+              9.794%
+              <br/>
+              <b>
+                E[cost]:
+              </b>
+              2.9M mesos
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M177.168 600h208.547v-51H177.168v51h-8 224.547v-51H169.168v51z"/>
+        <foreignObject width="193.547" height="36" class="label" transform="translate(184.668 556.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                slots:
+              </b>
+              1
+              <br/>
+              <b>
+                stats:
+              </b>
+              [106 WATK, 11 STR]
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M195.7 719h171.484l17.25-34.5-17.25-34.5H195.7l-17.25 34.5z"/>
+        <foreignObject width="156.484" height="54" class="label" transform="translate(203.2 657.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                scroll:
+              </b>
+              70% for WATK
+              <br/>
+              <b>
+                P(goal):
+              </b>
+              70%
+              <br/>
+              <b>
+                E[cost]:
+              </b>
+              35k mesos
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default" transform="translate(539.379 574.5)">
+        <rect class="basic label-container" style="fill:#00000000;stroke:#00000000" rx="0" ry="0" x="-9.5" y="-18.5" width="19" height="37"/>
+        <foreignObject width="4" height="22" class="label" transform="translate(-2 -11)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              ⋮
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default" transform="translate(119.242 812.5)">
+        <rect rx="25.5" ry="25.5" x="-111.242" y="-25.5" width="222.484" height="51"/>
+        <foreignObject width="194.734" height="36" class="label" transform="translate(-97.367 -18)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                slots:
+              </b>
+              0
+              <br/>
+              <b>
+                stats:
+              </b>
+              [108 WATK, 12 STR]
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M305.984 838h191.547l25.5-51H280.484z"/>
+        <foreignObject width="193.547" height="36" class="label" transform="translate(304.984 794.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <b>
+                slots:
+              </b>
+              0
+              <br/>
+              <b>
+                stats:
+              </b>
+              [106 WATK, 11 STR]
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M589.531 829h61.828l16.5-33h-94.828z"/>
+        <foreignObject width="57.828" height="18" class="label" transform="translate(591.531 803.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              <i>
+                boomed
+              </i>
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+    </g>
+  </g>
+</svg>

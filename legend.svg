@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="49" style="max-width:792.094px;background-color:transparent;font-family:&quot;trebuchet ms&quot;,verdana,arial,sans-serif;font-size:16px;fill:#000" viewBox="0 0 792.094 49">
+  <g class="root">
+    <g class="nodes">
+      <g class="node default">
+        <path class="label-container" d="M16.25 41h100.375l8.25-16.5-8.25-16.5H16.25L8 24.5z"/>
+        <foreignObject width="85.375" height="18" class="label" transform="translate(23.75 15.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              scroll usage
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M182.875 41h172.406V8H182.875v33h-8 188.406V8H174.875v33z"/>
+        <foreignObject width="157.406" height="18" class="label" transform="translate(190.375 15.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              nonterminal item state
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default" transform="translate(499.156 24.5)">
+        <rect style="fill:#eee;stroke:#999;stroke-width:1px" rx="16.5" ry="16.5" x="-85.875" y="-16.5" width="171.75" height="33"/>
+        <foreignObject width="148.5" height="18" class="label" transform="translate(-74.25 -9)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              successful item state
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+      <g class="node default">
+        <path class="label-container" d="M651.531 41h116.063l16.5-33H635.031z"/>
+        <foreignObject width="112.063" height="18" class="label" transform="translate(653.531 15.5)">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;white-space:nowrap">
+            <span class="nodeLabel">
+              failed item state
+            </span>
+          </div>
+        </foreignObject>
+      </g>
+    </g>
+  </g>
+</svg>

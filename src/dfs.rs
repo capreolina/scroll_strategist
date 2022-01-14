@@ -40,10 +40,14 @@ pub fn solve_p<'a>(
 /// a tie.
 ///
 /// The `master_scroll` parameter is used solely for optimisation, i.e. it's
-/// not _strictly_ necessary for this function to behave correctly. Likewise,
-/// the `cache` parameter is also used solely for [dynamic
+/// not _strictly_ necessary to have the correct master scroll for this
+/// function to behave correctly. However, **if you don't want to supply the
+/// correct master scroll, you should supply a null scroll** (any scroll that
+/// doesn't change the item on success) to preserve correctness. Likewise, the
+/// `cache` parameter is also used solely for [dynamic
 /// programming](https://en.wikipedia.org/wiki/Dynamic_programming)
-/// optimisation.
+/// optimisation. If no particular value for `cache` is appropriate, just pass
+/// in the empty map.
 ///
 /// ## Returns:
 ///
