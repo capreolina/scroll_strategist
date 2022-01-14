@@ -128,8 +128,8 @@ of free-market meso costs in MapleLegends as of this writing):
 }
 ```
 
-With this input, the optimiser will then perform a [depth-first search][dfs] of
-the tree mentioned above. This tree is constructed in
+With this input, the optimiser will then perform a [depth-first search
+(DFS)][dfs] of the tree mentioned above. This tree is constructed in
 [memory](https://en.wikipedia.org/wiki/Computer_memory) _only as needed_, and
 subtrees that are known to be suboptimal are pruned as they are discovered. The
 diagrams below illustrate a (small portion of a) pruned tree:
@@ -157,6 +157,29 @@ As you’d expect, the scroll that the optimiser chooses to use at any given
 point is just the scroll that yields [the
 largest](https://en.wikipedia.org/wiki/Maxima_and_minima) associated
 “**P(goal)**”.
+
+Because — as mentioned before — certain distinct subtrees are value-wise
+identical (“overlapping subproblems”), the most important optimisation to this
+DFS is simply keeping a [memo
+(cache)](https://en.wikipedia.org/wiki/Memoization). This cache
+[maps](https://en.wikipedia.org/wiki/Hash_table) item states (slots & stats) to
+their corresponding subtrees, so that those subtrees never have to be
+re-generated/searched again. Thus, only one copy of each subtree is kept
+in-memory. This is a _massive_ [time
+complexity](https://en.wikipedia.org/wiki/Time_complexity) reduction, and
+probably also a massive [space
+complexity](https://en.wikipedia.org/wiki/Space_complexity) reduction as well.
+
+Furthermore, another (smaller) performance optimisation is the so-called
+“master scroll” optimisation. The master scroll optimisation generates a
+“master scroll” before initiating the DFS. The master scroll is a _purely
+theoretical_ scroll that has a 100% probability of success, and grants a bonus
+to each stat that is equal to the highest bonus granted to that stat by any of
+the scrolls in the input set<sup>\[2\]</sup>. When considering what scroll to
+use next, we can first check whether or not we would reach our goal by using
+the master scroll on all remaining slots. If the answer is “no, the goal would
+still not be reached”, then we know that reaching the goal is simply
+impossible, and we can give up right away.
 
 <details>
 <summary>Footnotes for “The optimiser”</summary>
@@ -339,6 +362,11 @@ addition of real numbers, _not_ 𝗆𝖺𝗑. This is because we don’t have a 
 in which scroll outcome we get; we can only decide which scroll to use, and
 RNGsus does the rest. So, the best that we can do is calculate an
 [expectation](https://en.wikipedia.org/wiki/Expected_value).
+
+\[2\]: Think 𝗆𝖺𝗑<sup>3</sup>, but more like 𝗆𝖺𝗑<sup>𝑛</sup>, where 𝑛 is
+the number of columns/indices in the stat vectors. The stat vector of the
+master scroll is 𝗆𝖺𝗑<sup>𝑛</sup> of the stat vectors of all of the scrolls
+in the input set.
 
 </details>
 
