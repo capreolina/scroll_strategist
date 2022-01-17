@@ -307,6 +307,10 @@ semimodule axioms (for any 𝑣, 𝑤 ∈ 𝑀):
 - 0<sub>𝑅</sub> ⋅ 𝑣 = 𝑎 ⋅ 0<sub>𝑀</sub> = 0<sub>𝑀</sub> = \[0, 0, 0\].
   This follows from 0 being the annihilating element of ∗.
 
+(As written, these are actually the axioms that 𝑆<sub>𝑅</sub> must satisfy to
+be a **left** 𝑅-semimodule. But you can see that it’s also a right
+𝑅-semimodule, due to all operations involved being commutative.)
+
 The whole reason why we want the 𝗆𝖺𝗑 (and thus also 𝗆𝖺𝗑<sup>3</sup>)
 operation is because this is the operation that we apply to choose between one
 or more competing strategies. Whichever one maximises the probability of
