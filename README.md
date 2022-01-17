@@ -158,6 +158,8 @@ point is just the scroll that yields [the
 largest](https://en.wikipedia.org/wiki/Maxima_and_minima) associated
 “**P(goal)**”.
 
+#### Making the optimiser perform well (optimising the optimiser)
+
 Because — as mentioned before — certain distinct subtrees are value-wise
 identical (“overlapping subproblems”), the most important optimisation to this
 DFS is simply keeping a [memo
@@ -362,6 +364,47 @@ addition of real numbers, _not_ 𝗆𝖺𝗑. This is because we don’t have a 
 in which scroll outcome we get; we can only decide which scroll to use, and
 RNGsus does the rest. So, the best that we can do is calculate an
 [expectation](https://en.wikipedia.org/wiki/Expected_value).
+
+You might reasonably wonder what the 𝗆𝖺𝗑<sup>3</sup> operation is used for,
+or what it signifies. In this case, it’s not actually important; it has no
+particular meaning (but also see <sup>\[2\]</sup> for the application of this
+operation to stat vectors). However, it is both:
+
+- A natural component-wise extension of 𝗆𝖺𝗑,
+- _and_ sufficient to make 𝑀 an abelian monoid, and 𝑆<sub>𝑅</sub> a semimodule.
+
+The operation that we _actually_ want to get out of 𝑆<sub>𝑅</sub> being a
+semimodule is (⋅), i\.e. scalar multiplication. As mentioned above, our ∗ (and
+thus also ⋅) operation corresponds to the [conjunction][intersection] of
+independent events. In particular, for some
+𝐞 = \[𝑒<sub>1</sub>, 𝑒<sub>2</sub>, 𝑒<sub>3</sub>\], and some event
+𝑓 ⫫ 𝐞, we have:
+
+<div style="text-align:center;font-size:larger;">
+
+\[𝖯(𝑓 ∩ 𝑒<sub>1</sub>), 𝖯(𝑓 ∩ 𝑒<sub>2</sub>), 𝖯(𝑓 ∩ 𝑒<sub>3</sub>)\] =
+𝖯(𝑓 ∩ 𝐞) = 𝖯(𝑓) ⋅ 𝖯(𝐞).
+
+</div>
+
+This equation lets us obtain, for example, the probabilities of getting the
+various scroll outcomes at a certain scroll choice within our scrolling
+strategy (e\.g. \[passing, missing, booming\] a certain 30% scroll), before we
+even start scrolling. If we know the probability of getting to that point in
+the strategy (call this probability 𝖯(𝑓)), then we can just scalar-multiply
+that probability by the scroll’s outcome probability vector (in this case,
+\[30%, 35%, 35%\], because it’s a 30% scroll). The result is then:
+
+<div style="text-align:center;font-size:larger;">
+
+\[𝖯(𝑓) ∗ 30%, 𝖯(𝑓) ∗ 35%, 𝖯(𝑓) ∗ 35%\].
+
+</div>
+
+And of course, as mentioned before, the “inner product” (dot product) of two
+such vectors is crucial to the operation of the optimiser.
+
+---
 
 \[2\]: Think 𝗆𝖺𝗑<sup>3</sup>, but more like 𝗆𝖺𝗑<sup>𝑛</sup>, where 𝑛 is
 the number of columns/indices in the stat vectors. The stat vector of the
